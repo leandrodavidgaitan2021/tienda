@@ -14,10 +14,15 @@ def create_app():
     # Configuracion del proyecto
     app.config.from_mapping(
         DEBUG = True,
-        SECRET_KEY = 'dev',
+        SECRET_KEY = 'marga4443losmanzanos488',
+
         # configure the SQLite database, relative to the app instance folder
-        SQLALCHEMY_DATABASE_URI = "sqlite:///tienda.db"
-    )
+        #SQLALCHEMY_DATABASE_URI = "sqlite:///tienda.db"
+
+        # configure the MySQL database, relative to the app instance folder
+        SQLALCHEMY_DATABASE_URI = "mysql://root:marga4443@localhost/tienda",
+        SQLALCHEMY_TRACK_MODIFICATIONS = False
+    )   
     
     # initialize the app with the extension
     db.init_app(app)
